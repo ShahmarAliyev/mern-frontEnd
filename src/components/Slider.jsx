@@ -11,6 +11,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  margin-bottom: 3px;
 `;
 
 const Arrow = styled.div`

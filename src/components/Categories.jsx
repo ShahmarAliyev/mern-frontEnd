@@ -4,7 +4,7 @@ import CategoryItem from "./CategoryItem";
 
 const Container = styled.div`
   display: flex;
-  padding: 20px;
+  padding: 50px 20px 50px 20px;
   justify-content: space-between;
   background-color: #fff6ea;
   margin-top: 1px;

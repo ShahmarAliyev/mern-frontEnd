@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   height: 60px;
-  /* background-color: black; */
+  background-color: #fff6ea;
 `;
 
 const Wrapper = styled.div`
@@ -35,6 +35,7 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none;
+  background-color: #fff6ea;
 `;
 const Center = styled.div`
   flex: 1;

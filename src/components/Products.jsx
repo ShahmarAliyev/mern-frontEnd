@@ -4,6 +4,8 @@ import Product from "./Product";
 
 const Container = styled.div`
   padding-top: 50px;
+  padding-bottom: 50px;
+
   margin-top: 2px;
   display: grid;
   row-gap: 2px;

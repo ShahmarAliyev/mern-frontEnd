@@ -37,17 +37,11 @@ const Info = styled.div`
   transition: all 0.5s ease;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-  /* &:hover ${Icon} {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.1);
-  } */
 `;
 
 const Container = styled.div`
   flex: 1;
-  /* min-width: 280px; */
-  /* width: 380px;
-  height: 380px; */
+
   min-height: 100%;
   min-width: 100%;
   overflow: hidden;
@@ -59,6 +53,7 @@ const Container = styled.div`
 
   &:hover ${Icon} {
     opacity: 1;
+    background-color: #fff6ea;
   }
   &:hover ${Info} {
     background-color: rgba(0, 0, 0, 0.1);

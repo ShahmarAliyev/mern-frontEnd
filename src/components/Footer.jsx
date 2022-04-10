@@ -10,6 +10,8 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 
 const Container = styled.div`
   display: flex;
+  margin-bottom: 0;
+  padding-bottom: 0;
 `;
 const Left = styled.div`
   flex: 1;

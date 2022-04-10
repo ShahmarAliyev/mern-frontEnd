@@ -39,6 +39,12 @@ const Info = styled.div`
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 `;
 
+const Image = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 2;
+`;
 const Container = styled.div`
   flex: 1;
 
@@ -58,26 +64,15 @@ const Container = styled.div`
   &:hover ${Info} {
     background-color: rgba(0, 0, 0, 0.1);
   }
+  &:hover ${Image} {
+    transform: scale(1.1);
+    transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  }
 `;
-
-const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: 2;
-`;
-// const Circle = styled.div`
-//   width: 200px;
-//   height: 200px;
-//   border-radius: 50%;
-//   background-color: white;
-//   position: absolute;
-// `;
 
 const Product = ({ product }) => {
   return (
     <Container>
-      {/* <Circle /> */}
       <Image src={product.img} />
       <Info>
         <Icon>

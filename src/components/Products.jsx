@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { popularProducts } from "../data";
+import { mobile } from "../responsive";
 import Product from "./Product";
 
 const Container = styled.div`
@@ -14,6 +15,11 @@ const Container = styled.div`
   background-color: #fff6ea;
   width: 100%;
   height: 100vh;
+  /* ${mobile({
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+  })} */
 `;
 
 const Products = () => {

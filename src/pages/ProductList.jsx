@@ -5,6 +5,7 @@ import Announcement from "../components/Announcement";
 import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   background-color: #fff6ea;
@@ -17,22 +18,36 @@ const Title = styled.h1`
 const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({
+    flexDirection: "column",
+  })}
 `;
 const Filter = styled.div`
   margin: 20px;
+  ${mobile({
+    margin: "5px 0px 5px 2px",
+    width: "87%",
+  })}
 `;
 
 const FilterText = styled.span`
   font-size: 20px;
   font-weight: 600;
   margin-right: 20px;
+  ${mobile({
+    marginRight: "15px",
+  })}
 `;
 
 const Select = styled.select`
   padding: 10px;
   margin-right: 20px;
 `;
-const Option = styled.option``;
+const Option = styled.option`
+  ${mobile({
+    width: "5vw",
+  })}
+`;
 
 const ProductList = () => {
   return (
@@ -43,10 +58,7 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products</FilterText>
-          <Select>
-            <Option disabled selected>
-              Color
-            </Option>
+          <Select defaultValue={"Color"}>
             <Option>White</Option>
             <Option>Black</Option>
             <Option>Red</Option>
@@ -54,10 +66,7 @@ const ProductList = () => {
             <Option>Yello</Option>
             <Option>Green</Option>
           </Select>
-          <Select>
-            <Option disabled selected>
-              Size
-            </Option>
+          <Select defaultValue={"Size"}>
             <Option>XS</Option>
             <Option>S</Option>
             <Option>M</Option>
@@ -67,8 +76,7 @@ const ProductList = () => {
         </Filter>
         <Filter>
           <FilterText>Sort Products</FilterText>
-          <Select>
-            <Option selected>Newest</Option>
+          <Select defaultValue={"Newest"}>
             <Option>Price(low to high)</Option>
             <Option>Price(high to low)</Option>
           </Select>

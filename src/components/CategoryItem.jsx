@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   flex: 1;
@@ -11,6 +13,10 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  ${mobile({
+    height: "20vh",
+    flexDirection: "column",
+  })}
 `;
 const Info = styled.div`
   position: absolute;
@@ -37,12 +43,14 @@ const Button = styled.button`
 `;
 
 const CategoryItem = ({ item }) => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
-        <Button> SHOP NOW</Button>
+        <Button onClick={() => navigate("/product")}> SHOP NOW</Button>
       </Info>
     </Container>
   );

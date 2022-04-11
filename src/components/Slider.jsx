@@ -3,7 +3,8 @@ import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
 import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
 import { useState } from "react";
 import { sliderItems } from "../data";
-
+import { mobile } from "../responsive";
+import { useNavigate } from "react-router-dom";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -12,6 +13,9 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   margin-bottom: 3px;
+  ${mobile({
+    display: "none",
+  })}
 `;
 
 const Arrow = styled.div`
@@ -76,6 +80,8 @@ const Button = styled.button`
 `;
 
 const Slider = () => {
+  const navigate = useNavigate();
+
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     if (direction === "left") {
@@ -100,7 +106,10 @@ const Slider = () => {
               <InfoContainer>
                 <Title>{item.title}</Title>
                 <Description>{item.desc}</Description>
-                <Button> SHOP NOW</Button>
+                <Button onClick={() => navigate("/productlist")}>
+                  {" "}
+                  SHOP NOW
+                </Button>
               </InfoContainer>
             </Slide>
           );

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Add, Remove } from "@mui/icons-material";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   background-color: #fff6ea;
@@ -12,6 +13,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const ImgContainer = styled.div`
@@ -20,8 +22,9 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 90vh;
+  height: 70vh;
   object-fit: contain;
+  ${mobile({ height: "40vh" })}
 `;
 
 const InfoContainer = styled.div`
@@ -103,19 +106,21 @@ const Button = styled.button`
   &:hover {
     background-color: #f8f4ff;
   }
+  ${mobile({ width: "180px", height: "70px" })}
 `;
 
 const Product = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Navbar />
       <Announcement />
-
       <Wrapper>
         <ImgContainer>
           <Image src="https://i.imgur.com/a4yedRc.jpg" />
         </ImgContainer>
-
         <InfoContainer>
           <Title>Fancy Dresses</Title>
           <Desc>
@@ -153,7 +158,6 @@ const Product = () => {
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-
       <Newsletter />
       <Footer />
     </Container>

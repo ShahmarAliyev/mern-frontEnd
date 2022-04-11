@@ -4,6 +4,8 @@ import {
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import styled from "styled-components";
+import { mobile } from "../responsive";
+import { useNavigate } from "react-router-dom";
 
 const Icon = styled.div`
   opacity: 0;
@@ -44,6 +46,10 @@ const Image = styled.img`
   width: 100%;
   object-fit: cover;
   z-index: 2;
+  ${mobile({
+    height: "55%",
+    zIndex: 2,
+  })}
 `;
 const Container = styled.div`
   flex: 1;
@@ -56,6 +62,19 @@ const Container = styled.div`
   justify-content: center;
   background-color: #fff6ea;
   position: relative;
+  ${mobile({
+    maxHeight: "80%",
+    maxWidth: "80%",
+    margin: "0px",
+    paddingTop: "0px",
+    // minWidth: "280px",
+    // height: "350px",
+    // display: "flex",
+    // alignItems: "center",
+    // justifyContent: "center",
+    // backgroundColor: "#f5fbfd",
+    // position: "relative",
+  })}
 
   &:hover ${Icon} {
     opacity: 1;
@@ -71,8 +90,9 @@ const Container = styled.div`
 `;
 
 const Product = ({ product }) => {
+  const navigate = useNavigate();
   return (
-    <Container>
+    <Container onClick={() => navigate("/product")}>
       <Image src={product.img} />
       <Info>
         <Icon>

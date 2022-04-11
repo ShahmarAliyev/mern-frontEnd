@@ -1,3 +1,8 @@
+Full Stack MERN application. Online shopping website that is build with Node.js and React. Front-end of the website is build with styled components and material UI. Page is responsive with phones. Backend server is build with express. MongoDB is used as a database source.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -23,7 +23,6 @@ const Wrapper = styled.div`
 
     padding: "10px 0px",
     justifyContent: "start",
-    padding: "10px 0px",
   })}
 `;
 
@@ -32,7 +31,6 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   ${mobile({
-    // flex: 0.5,
     marginLeft: "0px",
   })}
 `;
@@ -62,9 +60,6 @@ const Input = styled.input`
 const Center = styled.div`
   flex: 1;
   text-align: center;
-  ${mobile({
-    // flex: 0.5,
-  })}
 `;
 
 const Logo = styled.h1`

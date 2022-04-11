@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useNavigate } from "react-router-dom";
